@@ -13,8 +13,7 @@ class RandomJokeScreen extends StatefulWidget {
 }
 
 class _RandomJokeScreenState extends State<RandomJokeScreen> {
-
-  late Joke joke;
+  Joke joke = Joke(id: 0, type: 'loading', setup: 'Please wait', punchline: 'wait a little more');
 
   @override
   void initState() {
@@ -31,7 +30,10 @@ class _RandomJokeScreenState extends State<RandomJokeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          backgroundColor: const Color(0xFFFF5C00),
+            iconTheme: const IconThemeData(
+              color: const Color(0xFF052032)
+            ),
           title: const Text('Joke of the day',
               style: TextStyle(
                   color: Colors.white,
@@ -40,7 +42,7 @@ class _RandomJokeScreenState extends State<RandomJokeScreen> {
           centerTitle: true,
         ),
         body: JokeCard(joke: joke),
-      backgroundColor: Colors.red,
+      backgroundColor: const Color(0xFFFF5C00),
     );
   }
 }

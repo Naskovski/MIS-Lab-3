@@ -31,8 +31,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.amber,
-        title: const Text("211198",
+        backgroundColor: Color(0xFF052032),
+        title: const Text("211198 Jokes",
             style: TextStyle(
                 color: Colors.white,
                 fontSize: 24,
@@ -40,7 +40,8 @@ class _HomeState extends State<Home> {
         centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(Icons.question_mark_rounded),
+            icon: const Icon(Icons.sentiment_very_satisfied, color: Color(
+                0xFF904E55),),
             onPressed: () {
               Navigator.pushNamed(context, '/random');
             },
@@ -51,18 +52,20 @@ class _HomeState extends State<Home> {
         itemCount: types.length,
         itemBuilder: (context, index) {
           return Card(
+              color: const Color(0xFFFFFFFF),
               child: InkWell(
             onTap: () => {
               Navigator.pushNamed(context, '/type', arguments: types[index])
             },
             child: ListTile(
-              title: Text(types[index]),
-              leading: const Icon(Icons.tag),
+              title: Text(types[index],
+                  style: const TextStyle(color: Color(0xFF000000))),
+              leading: const Icon(Icons.chevron_right, color: Color(0xFF000000),),
             ),
           ));
         },
       ),
-      backgroundColor: Colors.white70,
+      backgroundColor: Color(0xFF002626)
     );
   }
 }

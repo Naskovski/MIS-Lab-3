@@ -21,7 +21,7 @@ class _JokeCardState extends State<JokeCard> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
-      color: Colors.red,
+      color: const Color(0xFFFF5C00),
       child: InkWell(
         onTap: () {
           setState(() {
@@ -51,7 +51,7 @@ class _JokeCardState extends State<JokeCard> {
                   const Text(
                     "Click to reveal",
                     style: TextStyle(
-                      color: Colors.grey,
+                      color: Color(0xFF052032),
                       fontSize: 14,
                       fontStyle: FontStyle.italic,
                     ),

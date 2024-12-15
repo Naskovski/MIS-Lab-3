@@ -13,7 +13,6 @@ class JokeList extends StatelessWidget {
         padding: const EdgeInsets.all(4),
         semanticChildCount: 250,
         shrinkWrap: true,
-        // children: jokes.map((item) => Text(item.setup)).toList(),
         children: jokes
             .map((item) => JokeCard(
                 joke: Joke(

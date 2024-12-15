@@ -37,21 +37,23 @@ class _JokesScreenState extends State<JokesScreen> {
     });
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.transparent,
+          iconTheme: const IconThemeData(
+            color: const Color(0xFFFFFFFF)
+          ),
         title: const Text('Jokes',
             style: TextStyle(
-                color: Colors.white,
+                color: Color(0xFFFFFFFF),
                 fontSize: 24,
                 fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
-      body: JokeList(jokes: jokes,)
+      body: JokeList(jokes: jokes,),
+      backgroundColor: Color(0xFF052032),
     );
   }
 }

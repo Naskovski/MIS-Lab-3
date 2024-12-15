@@ -23,7 +23,7 @@ class JokeApp extends StatelessWidget {
       },
       theme: ThemeData(
         useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFFF5C00)),
       ),
     );
   }
