@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab2/models/joke.dart';
+import 'package:lab3/models/joke.dart';
 
 class JokeCard extends StatefulWidget {
   final Joke joke;

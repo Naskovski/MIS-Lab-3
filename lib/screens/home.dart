@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:lab2/service/api_service.dart';
+import 'package:lab3/service/api_service.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

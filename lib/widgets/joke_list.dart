@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:lab2/models/joke.dart';
-import 'package:lab2/widgets/joke_card.dart';
+import 'package:lab3/models/joke.dart';
+import 'package:lab3/widgets/joke_card.dart';
 
 class JokeList extends StatelessWidget {
   final List<Joke> jokes;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lab2/screens/home.dart';
-import 'package:lab2/screens/jokes_screen.dart';
-import 'package:lab2/screens/random_joke_screen.dart';
+import 'package:lab3/screens/home.dart';
+import 'package:lab3/screens/jokes_screen.dart';
+import 'package:lab3/screens/random_joke_screen.dart';
 
 void main() {
   runApp(const JokeApp());

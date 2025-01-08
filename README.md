@@ -1,6 +1,6 @@
-# lab2
+# lab3
 
-Lab 2 - Joke App - Filip Naskovski 211198
+Lab 3 - Joke App with extra features - Filip Naskovski 211198
 
 ## Getting Started
 

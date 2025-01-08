@@ -1,4 +1,4 @@
-package mk.ukim.finki.lab2
+package mk.ukim.finki.lab3
 
 import io.flutter.embedding.android.FlutterActivity
 
