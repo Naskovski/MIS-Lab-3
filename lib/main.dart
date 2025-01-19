@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:lab3/screens/favourite_jokes_screen.dart';
 import 'firebase_options.dart';
 
 import 'package:lab3/screens/home.dart';
@@ -31,6 +32,7 @@ class JokeApp extends StatelessWidget {
         '/' : (context) => const Home(),
         '/type': (context) => const JokesScreen(),
         '/random': (context) => const RandomJokeScreen(),
+        '/favourites': (context) => const FavoritesScreen(),
       },
       theme: ThemeData(
         useMaterial3: true,

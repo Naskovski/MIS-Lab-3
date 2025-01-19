@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:lab3/service/api_service.dart';
 
@@ -31,41 +30,100 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF052032),
-        title: const Text("211198 Jokes",
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold)),
+        backgroundColor: const Color(0xFF052032),
+        title: const Text(
+          "211198 Jokes",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(Icons.sentiment_very_satisfied, color: Color(
-                0xFF904E55),),
+            icon: const Icon(
+              Icons.sentiment_very_satisfied,
+              color: Color(0xFF904E55),
+            ),
             onPressed: () {
               Navigator.pushNamed(context, '/random');
             },
           ),
         ],
       ),
-      body: ListView.builder(
-        itemCount: types.length,
-        itemBuilder: (context, index) {
-          return Card(
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Favorites tile
+            Card(
               color: const Color(0xFFFFFFFF),
+              margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
               child: InkWell(
-            onTap: () => {
-              Navigator.pushNamed(context, '/type', arguments: types[index])
-            },
-            child: ListTile(
-              title: Text(types[index],
-                  style: const TextStyle(color: Color(0xFF000000))),
-              leading: const Icon(Icons.chevron_right, color: Color(0xFF000000),),
+                onTap: () {
+                  Navigator.pushNamed(context, '/favourites');
+                },
+                child: const ListTile(
+                  title: Text(
+                    "Favourites",
+                    style: TextStyle(color: Color(0xFF000000)),
+                  ),
+                  leading: Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                  ),
+                ),
+              ),
             ),
-          ));
-        },
+            // Categories title
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: Text(
+                "Categories",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            // List of joke types
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: types.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  color: const Color(0xFFFFFFFF),
+                  margin:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+                  child: InkWell(
+                    onTap: () => {
+                      Navigator.pushNamed(
+                        context,
+                        '/type',
+                        arguments: types[index],
+                      )
+                    },
+                    child: ListTile(
+                      title: Text(
+                        types[index],
+                        style: const TextStyle(color: Color(0xFF000000)),
+                      ),
+                      leading: const Icon(
+                        Icons.chevron_right,
+                        color: Color(0xFF000000),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
       ),
-      backgroundColor: Color(0xFF002626)
+      backgroundColor: const Color(0xFF002626),
     );
   }
 }

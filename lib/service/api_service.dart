@@ -11,9 +11,7 @@ class ApiService{
   static Future<dynamic> getJokesByType(String type) async{
     final response = await http.get(Uri.parse("https://official-joke-api.appspot.com/jokes/$type/ten"));
     if (response.statusCode == 200) {
-      print("Success: ${response.body}");
       var data = jsonDecode(response.body);
-      print("data $data");
       return data;
     }
     else{
@@ -23,6 +21,11 @@ class ApiService{
 
   static Future<http.Response> getRandomJoke() async {
     var response = await http.get(Uri.parse("https://official-joke-api.appspot.com/random_joke"));
+    return response;
+  }
+
+  static Future<http.Response> getJokeById(int jokeId) async {
+    var response = await http.get(Uri.parse("https://official-joke-api.appspot.com/jokes/$jokeId"));
     return response;
   }
 }
